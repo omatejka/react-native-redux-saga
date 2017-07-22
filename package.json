@@ -3,17 +3,18 @@
   "version": "0.1.0",
   "private": true,
   "devDependencies": {
-    "react-native-scripts": "0.0.50",
     "jest-expo": "~18.0.0",
+    "react-native-scripts": "0.0.50",
     "react-test-renderer": "16.0.0-alpha.12"
   },
   "main": "./node_modules/react-native-scripts/build/bin/crna-entry.js",
   "scripts": {
-    "start": "react-native-scripts start",
+    "start": "REACT_DEBUGGER=\"rndebugger-open --open --port 8081\" react-native-scripts start",
     "eject": "react-native-scripts eject",
     "android": "react-native-scripts android",
     "ios": "react-native-scripts ios",
-    "test": "node node_modules/jest/bin/jest.js --watch"
+    "test": "node node_modules/jest/bin/jest.js --watch",
+    "postinstall": "rndebugger-open"
   },
   "jest": {
     "preset": "jest-expo"
@@ -21,6 +22,12 @@
   "dependencies": {
     "expo": "^18.0.3",
     "react": "16.0.0-alpha.12",
-    "react-native": "^0.45.1"
+    "react-native": "^0.45.1",
+    "react-native-debugger-open": "^0.3.11",
+    "react-redux": "^5.0.5",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-saga": "^0.15.5",
+    "redux-types-creator": "^0.0.6"
   }
 }
