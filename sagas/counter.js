@@ -4,7 +4,7 @@ import {DECREMENT_COUNTER, INCREMENT_COUNTER} from "../actions/CounterActions";
 
 const counterInc = function* (){
   yield put({ type: INCREMENT_COUNTER.START });
-  yield delay(1500);
+  yield delay(2500);
   yield put({ type: INCREMENT_COUNTER.FINISH });
 };
 
@@ -14,7 +14,7 @@ export const counterIncSaga = function* () {
 
 const counterDec = function* (){
   yield put({ type: DECREMENT_COUNTER.START });
-  yield delay(1500);
+  yield delay(2500);
   yield put({ type: DECREMENT_COUNTER.FINISH });
 };
 

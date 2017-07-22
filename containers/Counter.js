@@ -8,11 +8,15 @@ class Counter extends Component {
   render() {
     const { counter, actions } = this.props;
     return (
-      <View style={styles.container}>
-        <Text>Counter</Text>
-        { counter.loading ? <ActivityIndicator /> : <Text>{counter.count}</Text>}
-        <Button disabled={counter.loading} onPress={actions.increment} title="Increase" />
-        <Button disabled={counter.loading} onPress={actions.decrement} title="Decrease" />
+      <View>
+        <View style={styles.container}>
+          <Text style={{ fontSize: 50}}>Counter</Text>
+          { counter.loading ? <ActivityIndicator size={64}/> : <Text style={{ color: 'red', fontSize: 50}}>{counter.count}</Text>}
+        </View>
+        <View style={styles.layoutButtonContainer}>
+          <Button disabled={counter.loading} onPress={actions.increment} title="Increase" />
+          <Button disabled={counter.loading} onPress={actions.decrement} title="Decrease" />
+        </View>
       </View>
     );
   }
@@ -20,11 +24,16 @@ class Counter extends Component {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    margin: 50,
     backgroundColor: '#fff',
     alignItems: 'center',
-    justifyContent: 'center',
+    justifyContent: 'center'
   },
+  layoutButtonContainer: {
+    margin: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-around'
+  }
 });
 
 function select(state) {
