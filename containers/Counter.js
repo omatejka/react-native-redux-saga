@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { bindActionCreators } from 'redux';
-import { StyleSheet, Text, View, Button, ActivityIndicator } from 'react-native';
+import { StyleSheet, Text, View, Button, ActivityIndicator, Platform } from 'react-native';
 import { connect } from 'react-redux';
 import * as counterActionCreators from '../actions/CounterActions';
 
@@ -11,7 +11,7 @@ class Counter extends Component {
       <View>
         <View style={styles.container}>
           <Text style={{ fontSize: 50}}>Counter</Text>
-          { counter.loading ? <ActivityIndicator size={64}/> : <Text style={{ color: 'red', fontSize: 50}}>{counter.count}</Text>}
+          { counter.loading ? <ActivityIndicator size={Platform.OS === 'ios' ? "large" : 64}/> : <Text style={{ color: 'red', fontSize: 50}}>{counter.count}</Text>}
         </View>
         <View style={styles.layoutButtonContainer}>
           <Button disabled={counter.loading} onPress={actions.increment} title="Increase" />
