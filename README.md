@@ -1,3 +1,5 @@
+You can try this App in [Expo](https://exp.host/@shadowwzw/react-native-redux-saga)
+
 This project was bootstrapped with [Create React Native App](https://github.com/react-community/create-react-native-app).
 
 Installation (MacOS):
